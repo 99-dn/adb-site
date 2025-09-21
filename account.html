@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>account page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+
+    body {
+      padding: 1rem;
+      background: linear-gradient(90deg, #fff, rgb(215, 255, 199));
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 400;
+    }
+
+    /* Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+    }
+
+    /* Important text */
+    .card-title,
+    .form-label {
+      font-weight: 600;
+    }
+
+    /* Button text */
+    button {
+      font-weight: 500;
+    }
+
+    .card {
+      border: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      transition: all 0.5s ease;
+      box-shadow: 1px 1px 1px rgb(255, 255, 255);
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transition: all 0.5s ease;
+      box-shadow: 0px 3px 5px rgb(192, 192, 192);
+    }
+    i {
+      padding: 0.3rem;
+      border-radius: 2rem;
+    }
+
+    /* Extra small devices (phones) */
+    @media (max-width: 575.98px) {
+      .container {
+        flex-direction: column;
+        padding: 0.5rem;
+      }
+
+      .card {
+        margin: 0.5rem 0;
+        padding: 1rem;
+      }
+
+      .col-md-8,
+      .col-md-6 {
+        padding: 0.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .form-control,
+      .form-select {
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+      }
+
+      .btn-lg {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .container a {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+      }
+
+      .form-check {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* Small devices (landscape phones) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      .col-md-6 {
+        margin-bottom: 0.75rem;
+      }
+
+      .form-control,
+      .form-select {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container">
+        <div class="navbar-brand">
+          ADB <img src="./4.webp" alt="pics" width="6%" height="6%" />
+        </div>
+        <!--hamburger button-->
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link"> 🏠 Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="./about.html" class="nav-link">ℹ️ About</a>
+            </li>
+            <li class="nav-item">
+              <a href="./account.html" class="nav-link active">🧾 Account</a>
+            </li>
+            <li class="nav-item">
+              <a href="./transaction.html" class="nav-link">💰 Transaction</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <br />
+    <h3 class="text-center">
+      <strong class="text-success">Welcome to AD</strong>
+      <i class="bg-success text-white">...truly agric and more</i>
+    </h3>
+    <br />
+    <div class="container-fluid">
+      <div class="row">
+        <!--ACCOUNT OPENING PLATFORM-->
+        <div class="col-md-8 mx-auto">
+          <div class="card">
+            <h4 class="card-header bg-success text-white text-center">
+              Account Opening Platform
+            </h4>
+            <div class="card-body">
+              <form>
+                <p class="text-success">Personal Details & Contact Info</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="Name" class="form-label">Customer Name</label>
+                      <input
+                        type="text"
+                        name="Name"
+                        id="Name"
+                        class="form-control"
+                        placeholder="Firstname Middlename Surname"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="passport" class="form-label"
+                        >Passport Photo</label
+                      >
+                      <input type="file" class="form-control" id="passport" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="DOB" class="form-label">Date of Birth</label>
+                      <input
+                        type="date"
+                        name="DOB"
+                        id="DOB"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="POB" class="form-label">Place of Birth</label>
+                      <input
+                        type="text"
+                        name="POB"
+                        id="POB"
+                        class="form-control"
+                        placeholder="Town (e.g., Dormaa)"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="landmark" class="form-label">Landmark</label>
+                      <input
+                        type="text"
+                        name="landmark"
+                        id="landmark"
+                        class="form-control"
+                        placeholder="Nearest church/school/market/etc"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="res" class="form-label"
+                        >Residential Address</label
+                      >
+                      <input
+                        type="text"
+                        name="res"
+                        id="res"
+                        class="form-control"
+                        placeholder="CS-058-798"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="idType" class="form-label"
+                        >National Identification Type</label
+                      >
+                      <select class="form-select" id="idType">
+                        <option value="">Select ID Type</option>
+                        <option value="voters">Voter's ID</option>
+                        <option value="ghana">Ghana Card</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label">ID Number</label>
+                      <input
+                        type="text"
+                        name="ID"
+                        id="ID"
+                        class="form-control"
+                        placeholder="GHA-89900 / VID-88999"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label class="form-label">Marital Status</label>
+                      <div class="d-flex gap-3">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="maritalStatus"
+                            id="single"
+                            value="single"
+                          />
+                          <label class="form-check-label" for="single"
+                            >Single</label
+                          >
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="maritalStatus"
+                            id="married"
+                            value="married"
+                          />
+                          <label class="form-check-label" for="married"
+                            >Married</label
+                          >
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="maritalStatus"
+                            id="divorced"
+                            value="divorced"
+                          />
+                          <label class="form-check-label" for="divorced"
+                            >Divorced</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="accountType" class="form-label"
+                        >Account Type</label
+                      >
+                      <select class="form-select" id="accountType">
+                        <option value="">
+                          Choose your preferred account type
+                        </option>
+                        <option value="savings">Savings Account</option>
+                        <option value="current">Current Account</option>
+                        <option value="fixed">Fixed Deposit Account</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label for="signatorytype" class="form-label"
+                        >Customer Signatory Type</label
+                      >
+                      <select class="form-select" id="accountType">
+                        <option value="">
+                          Choose your preferred Signatory type
+                        </option>
+                        <option value="savings">thumbprint</option>
+                        <option value="current">signature</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="Name" class="form-label"
+                        >Name of next of Kin</label
+                      >
+                      <input
+                        type="text"
+                        name="Name"
+                        id="Name"
+                        class="form-control"
+                        placeholder="Firstname Middlename Surname"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="idType" class="form-label"
+                        >National Identification Type</label
+                      >
+                      <select class="form-select" id="idType">
+                        <option value="">Select ID Type</option>
+                        <option value="voters">Voter's ID</option>
+                        <option value="ghana">Ghana Card</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label"
+                        >His/Her ID Number</label
+                      >
+                      <input
+                        type="text"
+                        name="ID"
+                        id="ID"
+                        class="form-control"
+                        placeholder="GHA-89900 / VID-88999"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="relative" class="form-label"
+                        >Your relationship with the next of Kin</label
+                      >
+                      <input
+                        type="text"
+                        name="relative"
+                        id="relative"
+                        class="form-control"
+                        placeholder="eg(mother/grandfather/cousin/etc...)"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <button
+                        type="submit"
+                        class="text-white bg-success btn-lg w-100"
+                      >
+                        Open Account
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

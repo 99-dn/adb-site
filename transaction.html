@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adb transactions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Source Sans Pro", sans-serif;
+    }
+
+    body {
+      padding: 1rem;
+      background: linear-gradient(90deg, #fff, rgb(215, 255, 199));
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 400;
+    }
+
+    /* Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+    }
+
+    /* Important text */
+    .card-title,
+    .form-label {
+      font-weight: 600;
+    }
+
+    /* Button text */
+    button {
+      font-weight: 500;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      transition: all 0.5s ease;
+      box-shadow: 1px 1px 1px rgb(255, 255, 255);
+      cursor: pointer;
+    }
+
+    .card {
+      margin: 5rem;
+      padding: 2rem;
+    }
+    .row {
+      padding: 0.5rem;
+    }
+
+    /* Extra small devices (phones) */
+    @media (max-width: 575.98px) {
+      .container {
+        flex-direction: column;
+        padding: 0.5rem;
+      }
+
+      .card {
+        margin: 0.5rem 0;
+        padding: 1rem;
+      }
+
+      #Est,
+      #Projects {
+        margin-bottom: 1.5rem;
+        padding: 0.75rem;
+      }
+
+      .col-md-6,
+      .col-6,
+      .col-12 {
+        margin-bottom: 0.75rem;
+        padding: 0.25rem;
+      }
+
+      .form-control,
+      .form-select {
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+      }
+
+      .btn-lg {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+
+      .container a {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+      }
+
+      .row {
+        padding: 0.25rem;
+      }
+    }
+
+    /* Small devices (landscape phones) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      #Est,
+      #Projects {
+        padding: 1rem;
+      }
+
+      .col-md-6 {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container">
+        <div class="navbar-brand">
+          ADB <img src="./4.webp" alt="pics" width="6%" height="6%" />
+        </div>
+        <!--hamburger button-->
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">
+                <i class="fas fa-home me-1"></i>🏠 Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="./about.html" class="nav-link">ℹ️ About</a>
+            </li>
+            <li class="nav-item">
+              <a href="./account.html" class="nav-link">🧾 Account</a>
+            </li>
+            <li class="nav-item">
+              <a href="./transaction.html" class="nav-link active"
+                >💰 Transaction</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-center text-success">
+          <u>ADB Transactions</u>
+        </h2>
+        <br />
+        <h5 class="card-text text-center text-success">
+          <h6 class="card-text text-center text-success">
+            enjoy our services 😊
+          </h6>
+        </h5>
+        <br />
+        <div class="row">
+          <div class="col-md-6 text-center text-light bg-success" id="Est">
+            <br />
+            <u><strong>Deposit </strong></u>
+            <div>
+              <form>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="Name" class="form-label">Account Name:</label>
+                      <input
+                        type="text"
+                        name="Name"
+                        id="Name"
+                        class="form-control"
+                        placeholder="the name you used to create the account..."
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="Name" class="form-label"
+                        >Account Number:</label
+                      >
+                      <input
+                        type="number"
+                        name="accNo"
+                        id="accNo"
+                        class="form-control"
+                        placeholder="30310170333355505"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="DOB" class="form-label"
+                        >Date of Deposit:</label
+                      >
+                      <input
+                        type="date"
+                        name="DOD"
+                        id="DOD"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label">GH-Card Number:</label>
+                      <input
+                        type="text"
+                        name="ID"
+                        id="ID"
+                        class="form-control"
+                        placeholder="GHA-89900 / AK101899"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="signatorytype" class="form-label"
+                        >Customer Signatory Type:</label
+                      >
+                      <select class="form-select" id="accountType">
+                        <option value="">
+                          Choose your preferred Signatory type
+                        </option>
+                        <option value="savings">thumbprint</option>
+                        <option value="current">signature</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label">Amount:</label>
+                      <input
+                        type="number"
+                        name="amnt"
+                        id="amnt"
+                        class="form-control"
+                        placeholder="10,100"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label">Mobile Number</label>
+                      <input
+                        type="number"
+                        name="call"
+                        id="call"
+                        class="form-control"
+                        placeholder="0537180988"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <button
+                        type="submit"
+                        class="text-success bg-light btn-lg w-100"
+                      >
+                        Click to Deposit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6 text-center text-success bg-light" id="Projects">
+            <br />
+            <u><strong>Withdrawals </strong></u>
+            <div>
+              <form>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="Name" class="form-label">Account Name:</label>
+                      <input
+                        type="text"
+                        name="Name"
+                        id="Name"
+                        class="form-control"
+                        placeholder="the name you used to create the account..."
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="Name" class="form-label"
+                        >Account Number:</label
+                      >
+                      <input
+                        type="number"
+                        name="accNo"
+                        id="accNo"
+                        class="form-control"
+                        placeholder="30310170333355505"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="mb-3">
+                      <label for="DOB" class="form-label"
+                        >Date of Withdrawal:</label
+                      >
+                      <input
+                        type="date"
+                        name="DOD"
+                        id="DOD"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label">GH-Card Number:</label>
+                      <input
+                        type="text"
+                        name="ID"
+                        id="ID"
+                        class="form-control"
+                        placeholder="GHA-89900 / AK101899"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="signatorytype" class="form-label"
+                        >Customer Signatory Type:</label
+                      >
+                      <select class="form-select" id="accountType">
+                        <option value="">
+                          Choose your preferred Signatory type
+                        </option>
+                        <option value="savings">thumbprint</option>
+                        <option value="current">signature</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label">Amount:</label>
+                      <input
+                        type="number"
+                        name="amnt"
+                        id="amnt"
+                        class="form-control"
+                        placeholder="10,100"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="ID" class="form-label">Mobile Number</label>
+                      <input
+                        type="number"
+                        name="call"
+                        id="call"
+                        class="form-control"
+                        placeholder="0537180988"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <button
+                        type="submit"
+                        class="text-light bg-success btn-lg w-100"
+                      >
+                        Click to Deposit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
